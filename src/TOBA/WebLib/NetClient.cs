@@ -775,25 +775,6 @@ namespace TOBA.WebLib
 		}
 
 		/// <summary>
-		/// 获得对应的数据处理类
-		/// </summary>
-		/// <param name="ctx"></param>
-		/// <param name="streamInvoker"></param>
-		/// <param name="result"></param>
-		/// <param name="targetStream">目标流</param>
-		/// <param name="saveToFilePath">希望保存到的目标文件路径</param>
-		/// <param name="extraRequestInfo">额外的请求数据信息</param>
-		/// <typeparam name="T"></typeparam>
-		/// <returns></returns>
-		public override HttpResponseContent GetPreferedResponseType<T>(HttpContext ctx, EventHandler<ResponseStreamContent.RequireProcessStreamEventArgs> streamInvoker = null, T result = default(T), Stream targetStream = null, string saveToFilePath = null, ExtraRequestInfo extraRequestInfo = null)
-		{
-			if (typeof(T) == typeof(string))
-				return new StringResponseWrapper(ctx, this);
-
-			return base.GetPreferedResponseType(ctx, streamInvoker, result, targetStream, saveToFilePath);
-		}
-
-		/// <summary>
 		/// 启用跟踪
 		/// </summary>
 		public static void EnableTrace()
